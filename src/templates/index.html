@@ -13,23 +13,25 @@
     <h2>Predict Food Waste</h2>
     
     <form action="/predict" method="post">
-        <label>Population (Million):</label>
+        <label for="population">Population (Million):</label>
         <input type="number" name="population" step="any" required><br>
 
-        <label>Economic Loss (Million $):</label>
-        <input type="number" name="gdp" step="any" required><br>
+        <label for="economic_loss">Economic Loss (Million $):</label>
+        <input type="number" name="economic_loss" step="any" required><br>
 
-        <label>Avg Waste per Capita (Kg):</label>
-        <input type="number" name="food_production" step="any" required><br>
+        <label for="avg_waste_per_capita">Avg Waste per Capita (Kg):</label>
+        <input type="number" name="avg_waste_per_capita" step="any" required><br>
 
-        <label>Household Waste (%):</label>
-        <input type="number" name="waste_percentage" step="any" required><br>
+        <label for="household_waste">Household Waste (%):</label>
+        <input type="number" name="household_waste" step="any" required><br>
 
         <button type="submit">Predict</button>
     </form>
 
-    {% if prediction is not none %}
-        <h3>Predicted Food Waste: {{ prediction }} tons</h3>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
     {% endif %}
+
 </body>
 </html>
